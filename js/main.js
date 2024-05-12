@@ -10,9 +10,9 @@ let finalPrice = 0;
 
 //check if the passenger is young or senior
 if (age < 18) {
-    finalPrice = grossPrice - (grossPrice * youngDiscount / 100);
+    finalPrice = grossPrice - (grossPrice * youngDiscount) / 100;
 } else if (age > 65) {
-    finalPrice = grossPrice - (grossPrice * seniorDiscount / 100);
+    finalPrice = grossPrice - (grossPrice * seniorDiscount) / 100;
 } else {
     finalPrice = grossPrice;
 }
@@ -27,16 +27,16 @@ if (isNaN(age) || isNaN(km)) {
     document.getElementById("message").innerHTML = `Bisogna inserire valori numerici!`;
 }
 else {
-    document.getElementById("age").innerHTML = `L'età del passeggero è ` + age + ` anni`;
-    document.getElementById("km").innerHTML = `Il passeggero deve percorrere ` + km + ` Km`;
-    document.getElementById("pricexkm").innerHTML = `Il prezzo a chilometro è € ` + pricexkm;
-    document.getElementById("grossprice").innerHTML = `Il prezzo senza sconto è € ` + grossPrice.toFixed(2);
+    document.getElementById("age").innerHTML = `L'età del passeggero è ${age} anni`;
+    document.getElementById("km").innerHTML = `Il passeggero deve percorrere ${km} Km`;
+    document.getElementById("pricexkm").innerHTML = `Il prezzo a chilometro è € ${pricexkm}`;
+    document.getElementById("grossprice").innerHTML = `Il prezzo senza sconto è €  ${grossPrice.toFixed(2)}`;
     if (age < 18) {
-        document.getElementById("discount").innerHTML = `Lo sconto applicato è ` + youngDiscount + `%`;
+        document.getElementById("discount").innerHTML = `Lo sconto applicato è ${youngDiscount} %`;
     } else if (age > 65) {
-        document.getElementById("discount").innerHTML = `Lo sconto applicato è ` + seniorDiscount + `%`;
+        document.getElementById("discount").innerHTML = `Lo sconto applicato è ${seniorDiscount} %`;
     } else {
         document.getElementById("discount").innerHTML = `Non si ha diritto a nessuno sconto!`;
     }
-    document.getElementById("price").innerHTML = 'Il prezzo finale è € ' + finalPrice.toFixed(2);
+    document.getElementById("price").innerHTML = `Il prezzo finale è € ${finalPrice.toFixed(2)}`;
 }
